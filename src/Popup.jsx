@@ -4,20 +4,20 @@ import { useState } from 'react'
 import Add from './Add'
 
 export default function Popup({isOpen,setIsOpen,product,setProduct}) {
+  const close = () => setIsOpen(false);
+  // function open() {
+  //   setIsOpen(true)
+  // }
 
-  function open() {
-    setIsOpen(true)
-  }
-
-  function close() {
-    setIsOpen(false)
-  }
+  // function close() {
+  //   setIsOpen(false)
+  // }
 
   return (
     <>
       <Button
         onClick={()=>setIsOpen(true)}
-        className="rounded-md bg-orange-500/50 py-2 px-4 text-sm font-medium text-white focus:outline-none data-[hover]:bg-orange-500 data-[focus]:outline-1 data-[focus]:outline-white"
+        className="rounded-md bg-orange-500/75 py-2 px-4 text-sm font-medium text-white focus:outline-none data-[hover]:bg-orange-500 data-[focus]:outline-1 data-[focus]:outline-white"
       >
        Add new food 
           </Button>
@@ -34,14 +34,6 @@ export default function Popup({isOpen,setIsOpen,product,setProduct}) {
             >
              <Add product={product} setProduct={setProduct} close={close}> </Add>
             
-              {/* <div className="mt-4">
-                <Button
-                  className="inline-flex items-center gap-2 rounded-md bg-orange-600 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-orange-700 data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-                  onClick={close}
-                >
-                  Got it, thanks!
-                </Button>
-              </div> */}
             </DialogPanel>
           </div>
         </div>

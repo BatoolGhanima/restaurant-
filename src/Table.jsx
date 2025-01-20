@@ -1,12 +1,13 @@
 import React from 'react'
-import { FaTrash, FaEdit } from "react-icons/fa";
+
+import { FaTrash,FaEdit } from "react-icons/fa";
 function Table({ onDelete,product}) {
   
   
     return (
       <div className="relative overflow-x-auto">
       <table className="w-full text-sm text-left rtl:text-right text-gray-800">
-          <thead className="text-xs text-orange-500 upercase bg-white text-[25px] ">
+          <thead className="text-[20px] text-orange-500 upercase bg-white  ">
             
               <tr>
                   <th scope="col" className="px-6 py-3">
@@ -39,18 +40,17 @@ function Table({ onDelete,product}) {
 
       <td  className="px-6 py-4"> {p.price}</td>
       <td className="px-6 py-4 flex">
-      <button 
-                  onClick={() => onEdit(p.id)} 
-                  className="text-blue-600 hover:text-blue-800 transition duration-200"
-                >
-                  <FaEdit size={20} />
-                </button>
+      
+        {/* <UpdatePop setIsOpen={setIsOpen} isOpen={isOpen} product={product} setProduct={setProduct} id={p.id}></UpdatePop> */}
+       
         <button 
                   onClick={() => onDelete(p.id)}
                   className="text-red-600 hover:text-red-800 transition duration-200 m-3"
                 >
-                  <FaTrash size={20} />
-                </button>
+          <FaTrash size={20} />
+          
+        </button>
+        
       </td>
     </tr>
   ))}
