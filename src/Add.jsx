@@ -9,7 +9,8 @@ function Add({ product, setProduct,close }) {
             console.log(data);
             await apiClient.post("/items", data); 
             setProduct([...product, {...data, id: product.length +1}]); 
-            reset(); 
+        reset(); 
+        close();
      
     };
 
@@ -41,7 +42,7 @@ function Add({ product, setProduct,close }) {
                         placeholder=" "
                     />
                     <label htmlFor="name_input"
-                        className="peer-focus:font-medium absolute text-sm text-black dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        className="peer-focus:font-medium absolute text-sm text-black dark:text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                         Product Name
                     </label>
                 </div>
