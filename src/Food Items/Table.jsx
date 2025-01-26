@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { FaTrash, FaEdit } from "react-icons/fa";
 import Popup from './Popup';
 import Update from './Update';
 import Show from './Show';
-function Table({ onDelete, product, setProduct }) {
+import SkeletonTable from './SkeletonTable';
+function Table({ onDelete, product, setProduct , lodaing }) {
 
+  const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (
+    
     <div className="relative overflow-x-auto">
+            {lodaing && skeletons.map((skeleton)=><SkeletonTable key={skeleton} ></SkeletonTable>) }
+
       <table className="w-full text-sm text-left rtl:text-right text-gray-800">
-        <thead className="text-[20px] text-orange-500 upercase bg-white  ">
+       
+       
+      <thead className="text-[20px] text-orange-500 upercase bg-white  ">
 
           <tr>
             <th scope="col" className="px-6 py-3">

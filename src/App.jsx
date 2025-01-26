@@ -10,16 +10,28 @@ import Home from "./Home components/Home";
 
 
 function App() {
+
   const [product, setProduct] = useState([])
   const [Error, setError] = useState([])
   const [isOpen, setIsOpen] = useState(false)
+  const [lodaing,setLodaing] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
+      setLodaing(true)
       await apiClient
         .get("/items")
-        .then((res) => setProduct(res.data))
-        .catch((err) => setError(err.message))
+        .then((res) => {
+          setLodaing(false)
+        //  setTimeout(() => {
+        //   setLodaing(false)
+        //  }, 2000); 
+         setProduct(res.data)
+        })
+        .catch((err) => {
+          setError(err.message);
+          setLodaing(false)
+        })
 
     }
     getData();
@@ -50,7 +62,7 @@ function App() {
 
       </div>
       <br /><br />
-      <Table product={product} setProduct={setProduct} onDelete={onDelete}  ></Table>
+      <Table product={product} setProduct={setProduct} onDelete={onDelete} lodaing={lodaing} ></Table>
       <br /><br /><br />
 
 
