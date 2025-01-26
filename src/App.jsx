@@ -5,7 +5,7 @@ import Popup from "./Food Items/Popup";
 import Nav from "./Nav";
 import Add from "./Food Items/Add";
 import Home from "./Home components/Home";
-import UseProduct from "./hooks/UseProduct";
+
 
 
 
@@ -25,20 +25,7 @@ function App() {
     getData();
 
   }, [])
-  const show = (id) => {
-    const [data, setData] = useState({})
-    apiClient.get(`/items/${id}`)
-      .then((res) => setData(res.data))
-    { console.log(data) }
-  }
 
-  // const deletAction = () => {
-  //   const {
-
-  //   return <div>
-  //     <button onClick={()=>{}}>delete</button>
-  //   </div>
-  // }
 
 
 
@@ -49,10 +36,7 @@ function App() {
     setProduct(product.filter((item) => item.id !== id));
 
   };
-  // const update = (id) => {
-  //   <UpdatePop product={product} setProduct={setProduct} isOpen={isOpen} setIsOpen={setIsOpen}  id={id}></UpdatePop>
 
-  // }
 
   return (
     <>
