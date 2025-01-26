@@ -1,15 +1,21 @@
 import React from 'react'
+import text from '../images/text.svg'
 
 function Dishes({ product }) {
     return (
+    <div>
+      <center><img src={text} alt="" className='mt-20 w-[1000px]' /> </center>  
+     
+   
         <div className='grid  grid-cols-2 md:grid-cols-3 lg:flex'>
-
             {product.map((p) => (
-                <div className='flex justify-center items-end relative my-3'>
-                    <div className= " bg-gradient-to-b from-white via-white via-70% to-red-100 rounded-lg shadow-lg p-6 max-w-sm m-2 ">
+                <div
+                    key={p.id}
+                    className='flex justify-center items-end relative my-3'>
+                    <div className= " bg-gradient-to-b from-orange-500/50 via-white via-25% via-50% to-red-50  shadow-lg p-6 max-w-sm mr-4 mt-2 rounded-t-full h-[550px]  overflow-auto">
                         <div className="relative ">
                             <img src={p.image_url} alt="p.name" className="w-full rounded-lg" />
-                            <div className="absolute buttom-2 right-2 bg-orange-400 text-white rounded-[50%] w-[50px] h-[50px] px-3 py-1 text-sm hover:bg-orange-500">{p.price}</div>
+                            <div className="absolute buttom-2 right-2 bg-orange-400 text-white rounded-[50%] w-[50px] h-[50px] px-3 py-1 text-sm hover:bg-orange-500 text-center">{p.price}</div>
                       
 
                         </div>
@@ -19,10 +25,10 @@ function Dishes({ product }) {
 
                             <div className="flex items-center justify-center">
                                 <span className="text-yellow-500 text-lg">★</span>
-                                <span className="ml-1 text-gray-700">(4.5)</span>
+                                <span className="ml-1 text-gray-700">{p.rating }</span>
 
                             </div>
-                            <h2 className="text-xl font-bold">{ p.name}</h2>
+                            <h2 className="text-xl font-bold text-red-600" >{ p.name}</h2>
                         </div>
                         <p className="mt-2 text-gray-600 text-end">{p.description}</p>
      
@@ -36,6 +42,7 @@ function Dishes({ product }) {
 
 
             ))}
+            </div>
         </div>
     )
 }

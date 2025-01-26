@@ -1,13 +1,21 @@
 import React from 'react'
 import { IoSearchSharp } from "react-icons/io5";
-
+import { useEffect,useState } from 'react';
 import firstcook from '../images/firstcook.svg'
 
 function FirstDep() {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+      setShow(true); // بعد تحميل الصفحة، يتم تفعيل الأنيميشن
+    }, []);
     return (
         <>
             <div className='flex  items-center p-2'>
-                <div className='w-[30%] items-center text-center'>
+                <div className= {`w-[30%] items-center text-center 
+                    transition-transform duration-1000 ease-out transform ${
+                        show ? "translate-x-4" : "-translate-x-full"
+                      }`} >
                     <p className='text-[30px] font-semibold' >
                         <span className='text-red-500'>مشروبات</span>
                         &

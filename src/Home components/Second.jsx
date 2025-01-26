@@ -6,7 +6,7 @@ import delevery from '../images/delevery.svg'
 
 function Second() {
   return (
-      <div className='flex p-2 px-4 m-4'>
+      <div className='flex p-2 px-4 m-4 justify-center items-center'>
           <div className='mx-2 border border-gray-200 rounded-md '>
               <img src={offer} alt="" />
               <div className='py-4 px-2 '>

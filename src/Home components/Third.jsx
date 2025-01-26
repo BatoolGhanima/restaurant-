@@ -2,16 +2,17 @@ import React from 'react'
 import secondcook from '../images/secondcook.svg'
 function Third() {
   return (
-      <div >
-          <div className='flex justify-between items-center'>
+     <div >
+        
+          <div className='flex justify-between items-center '>
               
           
           <img src={secondcook} alt="" className='w-[45%]' />
           <div className='w-[60%]'>
-          <h2 className='text-[25px] font-semibold text-red-600 my-3'>  نخدمكم بكل <span className='text-yellow-500'> الحب</span></h2>
+          <h2 className='text-[35px] font-semibold text-red-600 my-3'>  نخدمكم بكل <span className='text-yellow-500'> الحب</span></h2>
              <p className=''>مشوار متخصص في المشاوى والشاورما والمقبلات والبروستد 
              نخدمكم بأكثر من 10  فروع داخل المنطقة الشرقية بالخبر والدمام</p>
-                  <div className='flex  font-medium my-6'>
+                  <div className='flex  font-medium my-6 text-[20px]'>
                       <div className='mr-14' >
                          <p  className='py-3 '>📲 الطلب أونلاين</p>
                       <p className='py-3 '> 🕙الحجز المسبق </p>
@@ -24,6 +25,8 @@ function Third() {
                      </div>
                      
               </div>
+              <button className='bg-red-600 px-4 py-2 rounded-[50px] text-white hover:bg-red-700'>اطلب الآن</button>
+
               </div>
           </div>
     </div>
