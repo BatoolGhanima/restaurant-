@@ -5,31 +5,21 @@ import Popup from "./Food Items/Popup";
 import Nav from "./Nav";
 import Add from "./Food Items/Add";
 import Home from "./Home components/Home";
-import UseProduct from "./hooks/UseProduct";
 
 
 
 function App() {
+
   const [product, setProduct] = useState([])
   const [Error, setError] = useState('')
   const [isOpen, setIsOpen] = useState(false)
-  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
-      try {
-        setLoading(true)
-        await apiClient
-          .get("/items")
-          .then((res) => setProduct(res.data))
-        setLoading(false)
-
-      }
-      catch (err) {
-        setError(err.message);
-        setLoading(false)
-
-      }
+      await apiClient
+        .get("/items")
+        .then((res) => setProduct(res.data))
+        .catch((err) => setError(err.message))
 
     }
     getData();
@@ -52,6 +42,7 @@ function App() {
 
 
 
+
   const onDelete = async (id) => {
     { confirm("are you sure") }
     await apiClient
@@ -59,10 +50,7 @@ function App() {
     setProduct(product.filter((item) => item.id !== id));
 
   };
-  // const update = (id) => {
-  //   <UpdatePop product={product} setProduct={setProduct} isOpen={isOpen} setIsOpen={setIsOpen}  id={id}></UpdatePop>
 
-  // }
 
   return (
     <>
@@ -76,7 +64,7 @@ function App() {
 
       </div>
       <br /><br />
-      <Table product={product} setProduct={setProduct} onDelete={onDelete} loading={loading} ></Table>
+      <Table product={product} onDelete={onDelete} ></Table>
       <br /><br /><br />
 
 
