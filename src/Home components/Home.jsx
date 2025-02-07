@@ -3,18 +3,26 @@ import NavHome from './NavHome'
 import FirstDep from './FirstDep'
 import Second from './Second'
 import Third from './Third'
-import Dishes from './Dishes'
+import Dishes from '../Food Items/Dishes'
+import Footer from './Footer'
 
 function Home({product}) {
   return (
-    <div className='m-4 p-4'>
+    <div>
+       <div className='m-8 p-4'>
       <NavHome></NavHome>
       <FirstDep></FirstDep>
       <Second></Second>
       <Third></Third>
-<Dishes product={product}></Dishes>
+      <Dishes product={product}></Dishes>
+     
 
     </div>
+      <div>
+ <Footer></Footer>
+      </div>
+    </div>
+   
   )
 }
 
