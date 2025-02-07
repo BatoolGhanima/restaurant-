@@ -28,13 +28,6 @@
       "image_url": "https://i.ibb.co/QD0X3b8/unsplash-UC0-HZd-Uit-WY.png"
     },
     {
-      "image_url": "https://i.ibb.co/rds8LM3/unsplash-UC0-HZd-Uit-WY-2.png",
-      "name": "new food",
-      "status": "okey",
-      "price": "30 SD ",
-      "id": "1da2"
-    },
-    {
       "id": "0872",
       "image_url": "https://i.ibb.co/QD0X3b8/unsplash-UC0-HZd-Uit-WY.png",
       "name": "new tabula",
@@ -42,6 +35,15 @@
       "price": "29",
       "rating": "4.5",
       "description": "a new food to eat it is delicious and sweet good luck"
+    },
+    {
+      "id": "adf4",
+      "image_url": "https://i.ibb.co/rds8LM3/unsplash-UC0-HZd-Uit-WY-2.png",
+      "name": "أكلة جديدة",
+      "status": "warning",
+      "price": "30 SD ",
+      "rating": "3.5",
+      "description": "any thing"
     }
   ]
 }

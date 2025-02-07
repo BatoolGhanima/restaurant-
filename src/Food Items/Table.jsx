@@ -11,7 +11,6 @@ function Table({ onDelete, product, setProduct,loading }) {
 
   return (
     <div className="relative overflow-x-auto">
-                  {loading && skeletons.map((skeleton)=><Skeleton key={skeleton} ></Skeleton>) }
 
       <table className="w-full text-sm text-left rtl:text-right text-gray-800">
         <thead className="text-[20px] text-orange-500 upercase bg-white  ">
@@ -34,6 +33,8 @@ function Table({ onDelete, product, setProduct,loading }) {
             <th scope="col" className="px-6 py-3"> viwe </th>
           </tr>
         </thead>
+        {loading && skeletons.map((skeleton)=><Skeleton key={skeleton} ></Skeleton>) }
+
         <tbody>
           {product.map((p) => (
             <tr key={p.id} className="bg-white border-b dark:border-orange-700 text-[#333333]">

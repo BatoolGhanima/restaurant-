@@ -3,8 +3,10 @@ import React from 'react';
 
 import { AiOutlineSend, AiFillPhone } from "react-icons/ai";
 import { GrUserExpert } from "react-icons/gr";
+import Popup from './Food Items/Popup';
+import Favorite from './Home components/Favorite';
 
-function Nav() {
+function Nav({cartProduct} ) {
     return (
 
         <div className='bg-orange-700 flex justify-around text-white p-2'>
@@ -33,8 +35,10 @@ function Nav() {
                 <p className='flex justify-center items-center'> Login
                 <GrUserExpert className='mx-2' />
                 </p>
-                <p>Wishlist 🤍 </p>
-                
+                <Popup title={"Favorit"}>
+                  {({ setIsOpen }) => <Favorite cartProduct={cartProduct} setIsOpen={setIsOpen}></Favorite>}
+                </Popup>
+            
             </div>
         </div>
 

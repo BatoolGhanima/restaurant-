@@ -6,7 +6,7 @@ import Third from './Third'
 import Dishes from '../Food Items/Dishes'
 import Footer from './Footer'
 
-function Home({product}) {
+function Home({product , setCartProduct}) {
   return (
     <div>
        <div className='m-8 p-4'>
@@ -14,7 +14,7 @@ function Home({product}) {
       <FirstDep></FirstDep>
       <Second></Second>
       <Third></Third>
-      <Dishes product={product}></Dishes>
+      <Dishes product={product } setCartProduct={setCartProduct}></Dishes>
      
 
     </div>

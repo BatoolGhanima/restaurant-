@@ -1,7 +1,13 @@
 import React from 'react'
 import text from '../images/text.svg'
 
-function Dishes({ product }) {
+function Dishes({ product,setCartProduct }) {
+    const handleClick = (pc) => {
+        setCartProduct((prev) => {
+            return [...prev,pc]
+            
+        })
+    }
     return (
     <div>
       <center><img src={text} alt="" className='mt-20 w-[1000px]' /> </center>  
@@ -21,7 +27,9 @@ function Dishes({ product }) {
                         </div>
                         
                         <div className="mt-4  items-center justify-center text-center ">
-                        <button className="mt-4 bg-red-600 text-white rounded-2xl px-6 py-1 mb-2 hover:bg-red-700 ">+</button>
+                            <button className="mt-4 bg-red-600 text-white rounded-2xl px-6 py-1 mb-2 hover:bg-red-700 "
+                            onClick={()=>{handleClick(p)}}
+                            >+</button>
 
                             <div className="flex items-center justify-center">
                                 <span className="text-yellow-500 text-lg">★</span>
