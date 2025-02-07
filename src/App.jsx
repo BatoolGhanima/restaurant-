@@ -12,7 +12,7 @@ import Favorite from "./Home components/Favorite";
 
 
 function App() {
-
+const styles="rounded-md bg-orange-500/75 py-2 px-4 text-sm font-medium text-white focus:outline-none data-[hover]:bg-orange-500 data-[focus]:outline-1 data-[focus]:outline-white"
   const [product, setProduct] = useState([])
   const [Error, setError] = useState('')
   const [isOpen, setIsOpen] = useState(false)
@@ -54,7 +54,7 @@ function App() {
       <br />
     
       <div className="items-center ml-10">
-        <Popup title="Add new Food ">
+        <Popup title="Add new Food " style={styles}>
           {({ setIsOpen }) => <Add product={product} setProduct={setProduct} setIsOpen={setIsOpen} />}
         </Popup>
 

@@ -2,7 +2,8 @@ import React from 'react'
 
 function Favorite({cartProduct , setIsOpen }) {
   return (
-      <div>
+    <div>
+      <h1 className='font-extrabold text-orange-600 text-2xl'>Favorite Foods</h1>
           { cartProduct &&
               cartProduct.map((p) => (
                   <div className='border border-orange-400 m-2 p-4 ' key={p.id}>

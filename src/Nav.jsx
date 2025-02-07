@@ -35,10 +35,11 @@ function Nav({cartProduct} ) {
                 <p className='flex justify-center items-center'> Login
                 <GrUserExpert className='mx-2' />
                 </p>
-                <Popup title={"Favorit"}>
+                <div className='ml-3'>
+                <Popup title={"Favorit🤍"}>
                   {({ setIsOpen }) => <Favorite cartProduct={cartProduct} setIsOpen={setIsOpen}></Favorite>}
                 </Popup>
-            
+            </div>
             </div>
         </div>
 

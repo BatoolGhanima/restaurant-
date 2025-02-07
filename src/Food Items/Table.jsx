@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { BiShow } from "react-icons/bi";
 import { FaTrash, FaEdit } from "react-icons/fa";
+import { FaRegEdit } from "react-icons/fa";
 import Popup from './Popup';
 import Update from './Update';
 import Show from './Show';
@@ -8,8 +9,9 @@ import Skeleton from './Skeleton';
 function Table({ onDelete, product, setProduct,loading }) {
 
   const skeletons = [1, 2, 3, 4, 5, 6];
-
+const styles="rounded-md bg-orange-500/75 py-2 px-4 text-sm font-medium text-white focus:outline-none data-[hover]:bg-orange-500 data-[focus]:outline-1 data-[focus]:outline-white"
   return (
+
     <div className="relative overflow-x-auto">
 
       <table className="w-full text-sm text-left rtl:text-right text-gray-800">
@@ -47,14 +49,15 @@ function Table({ onDelete, product, setProduct,loading }) {
 
               <td className="px-6 py-4"> {p.price}</td>
               <td className="px-6 py-4 flex">
-
-                <Popup title="Edit Product">
+                <Popup title={
+                  <FaRegEdit size={23} className='text-blue-700 hover:text-blue-800' />
+}  >
                   {({ setIsOpen }) => <Update product={product} setProduct={setProduct} id={p.id} setIsOpen={setIsOpen} />}
                 </Popup>
 
                 <button
                   onClick={() => onDelete(p.id)}
-                  className="text-red-600 hover:text-red-800 transition duration-200 m-3"
+                  className="text-red-500 hover:text-red-700 transition duration-200 m-3"
                 >
                   <FaTrash size={20} />
 
@@ -63,7 +66,7 @@ function Table({ onDelete, product, setProduct,loading }) {
 
               </td>
               <td>
-                <Popup title={"Show Information"}>
+                <Popup title={<BiShow size={30} className='text-orange-300 hover:text-orange-500'/>} >
                   {({ setIsOpen }) => <Show id={p.id} />}
                 </Popup>
               </td>

@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import text from '../images/text.svg'
+import { FaHeart } from "react-icons/fa6";
+import { set } from 'react-hook-form';
 
 function Dishes({ product,setCartProduct }) {
     const handleClick = (pc) => {
@@ -8,6 +10,16 @@ function Dishes({ product,setCartProduct }) {
             
         })
     }
+
+    const [red, setRed] = useState({})
+    const clickFav = (id) => {
+        setRed((prev) => ({
+            ...prev,
+            [id]:!prev[id]
+        }))
+        
+    }
+    let isRed = false;
     return (
     <div>
       <center><img src={text} alt="" className='mt-20 w-[1000px]' /> </center>  
@@ -27,13 +39,29 @@ function Dishes({ product,setCartProduct }) {
                         </div>
                         
                         <div className="mt-4  items-center justify-center text-center ">
-                            <button className="mt-4 bg-red-600 text-white rounded-2xl px-6 py-1 mb-2 hover:bg-red-700 "
-                            onClick={()=>{handleClick(p)}}
-                            >+</button>
+                            <button className="mt-4  text-whhite rounded-2xl px-6 py-1 mb-2  after:text-red-500 after:bg-none "
+                                onClick={() => {
+                                    clickFav(p.id)
+                                    handleClick(p)
+                                }}
+                                disabled={red[p.id]}
+                            >
+                                <FaHeart size={25} className={red[p.id]?"text-red-500":"text-orange-300" } />
+                            </button>
 
                             <div className="flex items-center justify-center">
-                                <span className="text-yellow-500 text-lg">★</span>
-                                <span className="ml-1 text-gray-700">{p.rating }</span>
+                              
+                                {Array(Math.floor(p.rating))
+                                    .fill(0)
+                                    .map((_, index) => (
+                                        <span className="text-yellow-500 text-lg" key={index}>★</span>
+    
+                                    ))
+                                }
+                                {/* <span className="ml-1 text-gray-700">{(p.rating).map( ()=> (
+                                     <span className="text-yellow-500 text-lg">★</span>
+
+                               ) ) }</span> */}
 
                             </div>
                             <h2 className="text-xl font-bold text-red-600" >{ p.name}</h2>
